@@ -1,0 +1,78 @@
+<div class="main-holder">
+  <!-- الشريط العلوي الملكي البرغندي الملاصق -->
+  <header class="top-nav-burgundy">
+    <div class="nav-content">
+      <div class="logo">وسيط <span>المركبات</span></div>
+      <button class="back-btn" (click)="goBack()">⬅ العودة للرئيسية</button>
+    </div>
+  </header>
+
+  <main class="content-body">
+    <!-- بطاقة معلومات المستخدم الزجاجية الفخمة -->
+    <div class="profile-card-glass">
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop" alt="User" class="profile-big-avatar" />
+      <div class="profile-user-details">
+        <h1>{{ userName }}</h1>
+        <p class="role-badge">نوع الحساب: <strong>{{ getRoleName() }}</strong></p>
+      </div>
+    </div>
+
+    <!-- قسم السيارات التي عرضها المستخدم -->
+    <div class="section-title" style="margin-top: 40px;">
+      <h2>🚗 السيارات التي قمت بعرضها ونشرها</h2>
+      <p>إعلاناتك الخاصة النشطة في المنصة</p>
+    </div>
+    
+    <div class="no-results" *ngIf="myAds.length === 0">
+      <p>لم تقم بنشر أي إعلانات سيارات حتى الآن. يمكنك نشر إعلانك الأول من الصفحة الرئيسية!</p>
+    </div>
+
+    <div class="cards-grid" *ngIf="myAds.length > 0">
+      <div class="car-card" *ngFor="let car of myAds" (click)="goToCarDetails(car.id)">
+        <div class="image-slider">
+          <img [src]="car.images[0]" [alt]="car.name" />
+          <span class="badge">{{ car.badge }}</span>
+        </div>
+        <div class="card-details">
+          <div>
+            <h3>{{ car.name }}</h3>
+            <p class="car-meta">{{ car.meta }}</p>
+          </div>
+          <div class="card-footer">
+            <span class="price">{{ car.price }}</span>
+            <button class="see-details-btn">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم المفضلة في الملف الشخصي -->
+    <div class="section-title" style="margin-top: 50px;">
+      <h2>❤️ سياراتك في قائمة المفضلة</h2>
+    </div>
+
+    <div class="no-results" *ngIf="favoriteCars.length === 0">
+      <p>لا توجد سيارات محفوظة في المفضلة.</p>
+    </div>
+
+    <div class="cards-grid" *ngIf="favoriteCars.length > 0">
+      <div class="car-card" *ngFor="let car of favoriteCars" (click)="goToCarDetails(car.id)">
+        <div class="image-slider">
+          <img [src]="car.images[0]" [alt]="car.name" />
+          <span class="badge">{{ car.badge }}</span>
+        </div>
+        <div class="card-details">
+          <div>
+            <h3>{{ car.name }}</h3>
+            <p class="car-meta">{{ car.meta }}</p>
+          </div>
+          <div class="card-footer">
+            <span class="price">{{ car.price }}</span>
+            <button class="see-details-btn">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>

@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+.main-holder {
+  min-height: 100vh;
+  background-color: #0f1316;
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+}
+
+.top-nav-burgundy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(135deg, rgba(74, 15, 33, 0.96), rgba(45, 8, 19, 0.96));
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(216, 131, 149, 0.25);
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+}
+.logo span {
+  color: #ffb6c1;
+}
+
+.search-box {
+  position: relative;
+  width: 340px;
+}
+.search-box input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 11px 20px 11px 45px;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Tajawal', sans-serif;
+  outline: none;
+}
+.search-box .icon {
+  position: absolute;
+  left: 16px;
+  top: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(216, 131, 149, 0.6);
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 12px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(216, 131, 149, 0.25);
+  transition: all 0.3s ease;
+}
+.profile-trigger:hover {
+  background: rgba(216, 131, 149, 0.2);
+}
+.avatar-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffb6c1;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 13px;
+}
+.user-name {
+  font-weight: 800;
+  color: #fff;
+}
+.user-info .role {
+  color: #ffb6c1;
+  font-size: 11px;
+}
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background: #4a0f21;
+}
+
+.content-body {
+  padding: 130px 40px 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.section-title h2 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+.section-title p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.publish-ad-main-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #7a1835, #4a0f21);
+  color: #fff;
+  border: 1px solid #ffb6c1;
+  padding: 13px 26px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(122, 24, 53, 0.5);
+}
+.publish-ad-main-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #961d41, #5c1329);
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  color: #ffb6c1;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 30px;
+}
+
+.car-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  height: 425px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+.car-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(216, 131, 149, 0.45);
+  box-shadow: 0 20px 40px rgba(74, 15, 33, 0.45);
+}
+
+.image-slider {
+  position: relative;
+  height: 225px;
+  background: #000;
+  overflow: hidden;
+}
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* زر المفضلة (القلب) */
+.favorite-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.favorite-btn:hover {
+  transform: scale(1.1);
+  background: rgba(74, 15, 33, 0.9);
+}
+
+.dots-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+.dots-indicator span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+.dots-indicator span.active-dot {
+  background: #ffb6c1;
+  width: 16px;
+  border-radius: 6px;
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(74, 15, 33, 0.92);
+  border: 1px solid rgba(216, 131, 149, 0.45);
+  color: #ffb6c1;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.car-card:hover .slider-arrows {
+  opacity: 1;
+}
+.slider-arrows button {
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.card-details h3 {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.car-meta {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 12px;
+  gap: 12px;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 900;
+  color: #ffb6c1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 145px;
+}
+
+.see-details-btn {
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.see-details-btn:hover {
+  background: #4a0f21;
+  border-color: #d88395;
+}

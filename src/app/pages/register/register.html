@@ -1,0 +1,76 @@
+<div class="register-wrapper">
+  <div class="register-card">
+    
+    <!-- قسم الصورة البارز -->
+    <div class="image-box">
+      <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=800&auto=format&fit=crop" alt="سيارات فاخرة">
+    </div>
+
+    <!-- قسم النموذج الزجاجي (عربي) -->
+    <div class="form-box">
+      <h2>إنشاء حساب جديد</h2>
+
+      <form (ngSubmit)="onRegister()">
+        <!-- اختيار نوع الحساب -->
+        <div class="role-selector">
+          <button 
+            type="button" 
+            [class.active]="selectedRole === 'buyer'" 
+            (click)="selectedRole = 'buyer'">
+            🛒 مشتري
+          </button>
+          <button 
+            type="button" 
+            [class.active]="selectedRole === 'seller'" 
+            (click)="selectedRole = 'seller'">
+            🚗 بائع / معرض
+          </button>
+        </div>
+
+        <div class="input-field">
+          <input type="text" [(ngModel)]="registerData.fullName" name="fullName" placeholder="الاسم الكامل" required>
+          <span class="icon">👤</span>
+        </div>
+
+        <div class="input-field">
+          <input type="email" [(ngModel)]="registerData.email" name="email" placeholder="البريد الإلكتروني" required>
+          <span class="icon">✉</span>
+        </div>
+
+        <!-- حقل كلمة المرور مع زر التبديل (عين) -->
+        <div class="input-field">
+          <input 
+            [type]="showPassword ? 'text' : 'password'" 
+            [(ngModel)]="registerData.password" 
+            name="password" 
+            placeholder="كلمة المرور" 
+            required>
+          <span class="icon toggle-eye" (click)="togglePasswordVisibility()" title="إظهار/إخفاء كلمة المرور">
+            {{ showPassword ? '👁️' : '🙈' }}
+          </span>
+        </div>
+
+        <!-- شرط الموافقة الإجباري -->
+        <div class="seller-terms">
+          <label class="checkbox-label">
+            <input type="checkbox" [(ngModel)]="acceptedTerms" name="acceptedTerms">
+            <span>
+              أوافق على <a href="#">الشروط والأحكام</a> 
+              {{ selectedRole === 'seller' ? 'وتعليمات توثيق المعارض' : 'واستخدام المنصة' }}
+            </span>
+          </label>
+        </div>
+
+        <!-- الزر معطل مالم يتم النقر على المربع -->
+        <button type="submit" class="register-btn" [disabled]="!acceptedTerms">
+          إنشاء الحساب
+        </button>
+
+        <div class="form-links">
+          <a routerLink="/login">لديك حساب بالفعل؟ تسجيل الدخول</a>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+.details-holder {
+  min-height: 100vh;
+  background-color: #0f1316;
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+}
+
+.top-nav-burgundy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85px;
+  background: linear-gradient(135deg, rgba(74, 15, 33, 0.98), rgba(45, 8, 19, 0.98));
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(216, 131, 149, 0.3);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+}
+.logo span {
+  color: #ffb6c1;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(216, 131, 149, 0.4);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.back-btn:hover {
+  background: #58182b;
+  border-color: #ffb6c1;
+}
+
+.details-body {
+  padding: 120px 40px 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.details-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .details-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.car-gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-image-box {
+  position: relative;
+  height: 420px;
+  background: #000;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 131, 149, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.main-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(74, 15, 33, 0.9);
+  border: 1px solid #ffb6c1;
+  color: #ffb6c1;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 15px;
+}
+.slider-arrows button {
+  background: rgba(74, 15, 33, 0.85);
+  border: 1px solid rgba(216, 131, 149, 0.5);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots-indicator {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 14px;
+  border-radius: 15px;
+}
+.dots-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+}
+.dots-indicator span.active-dot {
+  background: #ffb6c1;
+  width: 20px;
+  border-radius: 8px;
+}
+
+.quick-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.spec-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.spec-card span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.spec-card strong {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.car-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.title-price-box h1 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.meta-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 12px;
+}
+.price-tag {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ffb6c1;
+  word-break: break-all;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(216, 131, 149, 0.2);
+  border-radius: 20px;
+  padding: 22px;
+  backdrop-filter: blur(12px);
+}
+.glass-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffb6c1;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+
+.seller-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.seller-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.seller-row span {
+  color: rgba(255, 255, 255, 0.6);
+}
+.rating-text {
+  color: #ffcc00 !important;
+}
+
+.contact-seller-btn {
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, #7a1835, #4a0f21);
+  color: #fff;
+  border: 1px solid #ffb6c1;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.condition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cond-item span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+.cond-item p {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.safe-text {
+  color: #4cd137 !important;
+}
+
+.book-inspection-btn {
+  background: linear-gradient(135deg, #a22349, #6e1630);
+  color: #fff;
+  border: 1px solid #ffb6c1;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: 'Tajawal', sans-serif;
+  cursor: pointer;
+}

@@ -1,0 +1,94 @@
+<div class="details-holder" *ngIf="carData">
+  <header class="top-nav-burgundy">
+    <div class="nav-content">
+      <div class="logo">وسيط <span>المركبات</span></div>
+      <button class="back-btn" (click)="goBack()">⬅ العودة للرئيسية</button>
+    </div>
+  </header>
+
+  <main class="details-body">
+    <div class="details-container">
+      <div class="car-gallery-section">
+        <div class="main-image-box">
+          <img [src]="carData.images[carData.currentImageIndex]" [alt]="carData.name" />
+          <span class="badge-tag">{{ carData.badge }}</span>
+          
+          <div class="slider-arrows">
+            <button (click)="prevImage()">❮</button>
+            <button (click)="nextImage()">❯</button>
+          </div>
+          
+          <div class="dots-indicator">
+            <span *ngFor="let img of carData.images; let i = index" [class.active-dot]="i === carData.currentImageIndex"></span>
+          </div>
+        </div>
+
+        <div class="quick-specs-grid">
+          <div class="spec-card">
+            <span>الممشى</span>
+            <strong>{{ carData.specs.mileage }}</strong>
+          </div>
+          <div class="spec-card">
+            <span>ناقل الحركة</span>
+            <strong>{{ carData.specs.transmission }}</strong>
+          </div>
+          <div class="spec-card">
+            <span>نوع الوقود</span>
+            <strong>{{ carData.specs.fuel }}</strong>
+          </div>
+          <div class="spec-card">
+            <span>اللون الخارجي</span>
+            <strong>{{ carData.specs.color }}</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="car-info-section">
+        <div class="title-price-box">
+          <h1>{{ carData.name }}</h1>
+          <p class="meta-sub">{{ carData.meta }}</p>
+          <div class="price-tag">{{ carData.price }}</div>
+        </div>
+
+        <div class="glass-card seller-card">
+          <h3>👤 معلومات العارض / البائع</h3>
+          <div class="seller-details">
+            <div class="seller-row">
+              <span>اسم البائع:</span>
+              <strong>{{ carData.seller.name }} ({{ carData.seller.type }})</strong>
+            </div>
+            <div class="seller-row">
+              <span>📍 الموقع:</span>
+              <strong>{{ carData.seller.location }}</strong>
+            </div>
+            <div class="seller-row">
+              <span>⭐ التقييم:</span>
+              <strong class="rating-text">{{ carData.seller.rating }}</strong>
+            </div>
+          </div>
+          <a [href]="'tel:' + carData.seller.phone" class="contact-seller-btn">📞 تواصل مع البائع ({{ carData.seller.phone }})</a>
+        </div>
+
+        <div class="glass-card condition-card">
+          <h3>🔧 حالة السيارة الفنية والأعطال</h3>
+          <div class="condition-list">
+            <div class="cond-item">
+              <span>حالة الهيكل:</span>
+              <p>{{ carData.condition.status }}</p>
+            </div>
+            <div class="cond-item">
+              <span>الحوادث والأعطال:</span>
+              <p class="safe-text">{{ carData.condition.accidents }}</p>
+            </div>
+            <div class="cond-item">
+              <span>القطع التي تم تغيرها:</span>
+              <p>{{ carData.condition.replacedParts }}</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="book-inspection-btn">حجز موعد معاينة السيارة</button>
+      </div>
+    </div>
+  </main>
+</div>

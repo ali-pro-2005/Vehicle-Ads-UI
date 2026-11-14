@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
+
+.main-holder {
+  min-height: 100vh;
+  background-color: #0f1316;
+  color: #fff;
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+}
+
+.top-nav-burgundy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(135deg, rgba(74, 15, 33, 0.96), rgba(45, 8, 19, 0.96));
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(216, 131, 149, 0.25);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+}
+.logo span {
+  color: #ffb6c1;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(216, 131, 149, 0.4);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.content-body {
+  padding: 130px 40px 60px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.profile-card-glass {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(216, 131, 149, 0.3);
+  border-radius: 24px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+.profile-big-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffb6c1;
+}
+.profile-user-details h1 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.role-badge {
+  color: #ffb6c1;
+  font-size: 14px;
+}
+
+.section-title h2 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+.section-title p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.car-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  overflow: hidden;
+  height: 425px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.car-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffb6c1;
+}
+
+.image-slider {
+  position: relative;
+  height: 225px;
+  background: #000;
+}
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(74, 15, 33, 0.92);
+  border: 1px solid #ffb6c1;
+  color: #ffb6c1;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.card-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.card-details h3 {
+  font-size: 18px;
+  font-weight: 800;
+}
+.car-meta {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 12px;
+}
+.price {
+  color: #ffb6c1;
+  font-weight: 900;
+}
+.see-details-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}

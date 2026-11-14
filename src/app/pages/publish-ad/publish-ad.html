@@ -1,0 +1,113 @@
+<div class="publish-holder">
+  <header class="top-nav-burgundy">
+    <div class="nav-content">
+      <div class="logo">وسيط <span>المركبات</span></div>
+      <button class="back-btn" (click)="goBack()">⬅ العودة للرئيسية</button>
+    </div>
+  </header>
+
+  <main class="publish-body">
+    <div class="publish-container">
+      <div class="form-header">
+        <h1>➕ نشر إعلان مركبة جديدة</h1>
+        <p>أدخل تفاصيل سيارتك بدقة لتظهر للمشترين بأرقى مظهر فني زجاجي</p>
+      </div>
+
+      <form (ngSubmit)="onSubmitAd()" class="glass-form">
+        <fieldset class="form-section">
+          <legend>✨ المعلومات الأساسية للسيارة</legend>
+          <div class="input-grid">
+            <div class="input-group">
+              <label>اسم السيارة والطراز</label>
+              <input type="text" [(ngModel)]="ad.carName" name="carName" placeholder="مثال: Mercedes-AMG G63" required />
+            </div>
+            <div class="input-group">
+              <label>البراند / الماركة</label>
+              <input type="text" [(ngModel)]="ad.brand" name="brand" placeholder="مثال: مرسيدس" required />
+            </div>
+            <div class="input-group">
+              <label>سنة الصنع (الموديل)</label>
+              <input type="text" [(ngModel)]="ad.modelYear" name="modelYear" placeholder="مثال: 2024" required />
+            </div>
+            <div class="input-group">
+              <label>السعر المطلوب (ر.س)</label>
+              <input type="text" [(ngModel)]="ad.price" name="price" placeholder="مثال: 890,000" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend>⚙️ المواصفات والأداء</legend>
+          <div class="input-grid">
+            <div class="input-group">
+              <label>الممشى (كم)</label>
+              <input type="text" [(ngModel)]="ad.mileage" name="mileage" placeholder="مثال: 5,000 كم" />
+            </div>
+            <div class="input-group">
+              <label>اللون الخارجي</label>
+              <input type="text" [(ngModel)]="ad.color" name="color" placeholder="مثال: أسود ملكي" />
+            </div>
+            <div class="input-group">
+              <label>ناقل الحركة (الجير)</label>
+              <select [(ngModel)]="ad.transmission" name="transmission">
+                <option value="أوتوماتيك">أوتوماتيك</option>
+                <option value="عادي / مانيوال">عادي / مانيوال</option>
+                <option value="سبورت مزدوج">سبورت مزدوج</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>تصنيف الإعلان (الشارة)</label>
+              <select [(ngModel)]="ad.badge" name="badge">
+                <option value="مميز">مميز</option>
+                <option value="جديد">جديد</option>
+                <option value="رياضية">رياضية</option>
+                <option value="ملكية">ملكية VIP</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend>🔧 الحالة الفنية والأعطال</legend>
+          <div class="input-grid">
+            <div class="input-group">
+              <label>حالة الهيكل العامة</label>
+              <input type="text" [(ngModel)]="ad.carStatus" name="carStatus" placeholder="مثال: ممتازة خالية من الرش" />
+            </div>
+            <div class="input-group">
+              <label>هل توجد حوادث أو أعطال سابقة؟</label>
+              <select [(ngModel)]="ad.hasAccidents" name="hasAccidents">
+                <option value="لا توجد حوادث">لا توجد حوادث نهائياً</option>
+                <option value="صدمة خفيفة تجميلية">صدمة خفيفة تجميلية وتم إصلاحها بالوكالة</option>
+              </select>
+            </div>
+            <div class="input-group full-width">
+              <label>القطع التي تم استبدالها (إن وجدت)</label>
+              <input type="text" [(ngModel)]="ad.replacedParts" name="replacedParts" placeholder="مثال: تم تغيير الإطارات بيريلي أصلية" />
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section">
+          <legend>📞 معلومات الاتصال ورفع الصور</legend>
+          <div class="input-grid">
+            <div class="input-group">
+              <label>رابط صورة السيارة (URL)</label>
+              <input type="text" [(ngModel)]="ad.imageUrl" name="imageUrl" placeholder="ضع رابط الصورة المباشر هنا" />
+            </div>
+            <div class="input-group">
+              <label>رقم الجوال للتواصل</label>
+              <input type="text" [(ngModel)]="ad.phone" name="phone" placeholder="مثال: +966 50 000 0000" required />
+            </div>
+            <div class="input-group full-width">
+              <label>المدينة / الموقع</label>
+              <input type="text" [(ngModel)]="ad.location" name="location" placeholder="مثال: الرياض - طريق الملك فهد" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-ad-btn">🚀 نشر الإعلان الآن في المنصة</button>
+      </form>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,43 @@
+<div class="main-holder">
+  <!-- الشريط العلوي الملكي البرغندي الملاصق -->
+  <header class="top-nav-burgundy">
+    <div class="nav-content">
+      <div class="logo">وسيط <span>المركبات</span></div>
+      <button class="back-btn" (click)="goBack()">⬅ العودة للرئيسية</button>
+    </div>
+  </header>
+
+  <!-- محتوى صفحة المفضلة -->
+  <main class="content-body">
+    <div class="section-title">
+      <h2>❤️ سياراتك المفضلة</h2>
+      <p>المركبات الفاخرة التي قمت بحفظها لاستعراضها لاحقاً</p>
+    </div>
+
+    <!-- رسالة في حال كانت المفضلة فارغة -->
+    <div class="no-results" *ngIf="favoriteCars.length === 0">
+      <p>لا توجد سيارات في قائمة المفضلة حالياً. قومي بإضافة بعض السيارات بالضغط على رمز القلب ❤ في الصفحة الرئيسية!</p>
+    </div>
+
+    <!-- شبكة عرض السيارات المفضلة -->
+    <div class="cards-grid" *ngIf="favoriteCars.length > 0">
+      <div class="car-card" *ngFor="let car of favoriteCars" (click)="goToCarDetails(car.id)">
+        <div class="image-slider">
+          <img [src]="car.images[car.currentImageIndex || 0]" [alt]="car.name" />
+          <button class="favorite-btn active-fav" (click)="removeFavorite(car.id, $event)" title="إزالة من المفضلة">❤️</button>
+          <span class="badge">{{ car.badge || 'مميز' }}</span>
+        </div>
+        <div class="card-details">
+          <div>
+            <h3>{{ car.name }}</h3>
+            <p class="car-meta">{{ car.meta }}</p>
+          </div>
+          <div class="card-footer">
+            <span class="price">{{ car.price }}</span>
+            <button class="see-details-btn" (click)="goToCarDetails(car.id); $event.stopPropagation()">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

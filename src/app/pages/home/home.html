@@ -1,0 +1,81 @@
+<div class="main-holder">
+  <header class="top-nav-burgundy">
+    <div class="nav-content">
+      <div class="logo">وسيط <span>المركبات</span></div>
+
+      <div class="search-box">
+        <input type="text" [(ngModel)]="searchQuery" placeholder="ابحث عن مركبة (مرسيدس، بوغاتي...)" />
+        <span class="icon">🔍</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#" class="active">الرئيسية</a>
+        <a href="#cars-grid-target" (click)="scrollToCars($event)">السيارات المعروضة</a>
+        <a href="#" (click)="goToFavorites(); $event.preventDefault()">❤️ المفضلة</a>
+      </nav>
+
+      <div class="user-panel">
+        <div class="profile-trigger" (click)="goToProfile()" style="cursor: pointer;" title="الملف الشخصي وإعلاناتي">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Profile" class="avatar-img" />
+          <div class="user-info">
+            <span class="user-name">{{ userName }}</span>
+            <span class="role">{{ getRoleName() }}</span>
+          </div>
+        </div>
+        <button class="logout-btn" (click)="onLogout()">تسجيل الخروج</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-body">
+    <div class="section-header-row">
+      <div class="section-title">
+        <h2>أحدث المركبات الفاخرة المعروضة</h2>
+        <p>استعرض نخبة السيارات الرياضية والفارهة المميزة</p>
+      </div>
+
+      <button class="publish-ad-main-btn" (click)="goToPublishAd()">
+        <span class="plus-icon">＋</span>
+        <span>نشر إعلان جديد</span>
+      </button>
+    </div>
+
+    <div class="no-results" *ngIf="filteredCars.length === 0">
+      <p>لم يتم العثور على سيارات مطابقة لبحثك "{{ searchQuery }}"</p>
+    </div>
+    
+    <div class="cards-grid" id="cars-grid-target">
+      <div class="car-card" *ngFor="let car of filteredCars" (click)="goToCarDetails(car.id)">
+        <div class="image-slider">
+          <img [src]="car.images[car.currentImageIndex]" [alt]="car.name" (error)="onImageError($event)" />
+          
+          <!-- زر المفضلة (القلب) -->
+          <button class="favorite-btn" (click)="toggleFavorite(car, $event)" [class.active-fav]="isFavorite(car.id)">
+            {{ isFavorite(car.id) ? '❤️' : '🤍' }}
+          </button>
+
+          <div class="dots-indicator">
+            <span *ngFor="let img of car.images; let i = index" [class.active-dot]="i === car.currentImageIndex"></span>
+          </div>
+
+          <div class="slider-arrows">
+            <button class="prev-arrow" (click)="prevImage(car, $event)">❮</button>
+            <button class="next-arrow" (click)="nextImage(car, $event)">❯</button>
+          </div>
+          <span class="badge">{{ car.badge }}</span>
+        </div>
+
+        <div class="card-details">
+          <div>
+            <h3>{{ car.name }}</h3>
+            <p class="car-meta">{{ car.meta }}</p>
+          </div>
+          <div class="card-footer">
+            <span class="price" [title]="car.price">{{ car.price }}</span>
+            <button class="see-details-btn" (click)="goToCarDetails(car.id); $event.stopPropagation()">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

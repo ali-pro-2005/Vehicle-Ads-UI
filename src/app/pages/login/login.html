@@ -1,0 +1,58 @@
+<div class="auth-holder">
+  <div class="glass-auth-card">
+    <div class="brand-header">
+      <h1>وسيط <span>المركبات</span></h1>
+      <p>{{ isRegisterMode ? 'أنشئ حسابك الفاخر للبدء' : 'مرحباً بعودتك إلى عالم الفخامة' }}</p>
+    </div>
+
+    <!-- نموذج تسجيل الدخول -->
+    <form *ngIf="!isRegisterMode" (ngSubmit)="onLogin()" class="auth-form">
+      <div class="input-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" [(ngModel)]="email" name="email" placeholder="example@domain.com" required />
+      </div>
+
+      <div class="input-group">
+        <label>كلمة المرور</label>
+        <input type="password" [(ngModel)]="password" name="password" placeholder="••••••••" required />
+      </div>
+
+      <button type="submit" class="primary-auth-btn">تسجيل الدخول</button>
+    </form>
+
+    <!-- نموذج إنشاء حساب جديد -->
+    <form *ngIf="isRegisterMode" (ngSubmit)="onRegister()" class="auth-form">
+      <div class="input-group">
+        <label>الاسم الكامل</label>
+        <input type="text" [(ngModel)]="regName" name="regName" placeholder="أدخل اسمك" required />
+      </div>
+
+      <div class="input-group">
+        <label>البريد الإلكتروني</label>
+        <input type="email" [(ngModel)]="regEmail" name="regEmail" placeholder="example@domain.com" required />
+      </div>
+
+      <div class="input-group">
+        <label>كلمة المرور</label>
+        <input type="password" [(ngModel)]="regPassword" name="regPassword" placeholder="••••••••" required />
+      </div>
+
+      <div class="input-group">
+        <label>نوع الحساب</label>
+        <select [(ngModel)]="regRole" name="regRole">
+          <option value="buyer">مشتري (تصفح وشراء)</option>
+          <option value="seller">بائع / معرض سيارات</option>
+        </select>
+      </div>
+
+      <button type="submit" class="primary-auth-btn">إنشاء الحساب وحفظه</button>
+    </form>
+
+    <div class="switch-mode">
+      <span>{{ isRegisterMode ? 'لديك حساب بالفعل؟' : 'ليس لديك حساب؟' }}</span>
+      <button type="button" (click)="toggleMode()">
+        {{ isRegisterMode ? 'سجل دخولك الآن' : 'أنشئ حساباً جديداً' }}
+      </button>
+    </div>
+  </div>
+</div>
